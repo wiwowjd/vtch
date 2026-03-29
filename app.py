@@ -1,5 +1,6 @@
 import json
 import os
+import requests
 from flask import Flask, request, jsonify, render_template
 from flask.views import MethodView
 
@@ -108,14 +109,27 @@ class PingEndpoint(MethodView):
     """GET /api/ping — Cek koneksi ke server."""
 
     def get(self):
-        meta, data = get_meta_and_data("ping")
-        return jsonify({
-            "status":   200,
-            "endpoint": "/api/ping",
-            "method":   "GET",
-            "data":     data
-        })
-
+        try:
+            meta, data = get_meta_and_data("ping")
+            start = time.time()
+            r = requests.get("https://google.com", timeout=5)
+            latency = round((time.time() - start) * 1000, 2)
+            return jsonify({
+                "status":   200,
+                "endpoint": "/api/ping",
+                "method":   "GET",
+                "body": {
+                    "host": url,
+                    "status": "online",
+                    "ping_ms": latency,
+                    "http_code": r.status_code
+                }
+            })
+        except:
+            return jsonify({
+                "status":   400,
+                "message":  "PUki mak"
+            }), 400
 
 class CariEndpoint(MethodView):
     """GET /api/cari?q=<kata_kunci> — Pencarian dengan query parameter."""
