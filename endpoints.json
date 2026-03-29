@@ -93,18 +93,4 @@
     ]
   },
 
-  "tools": {
-    "_meta": {
-      "name": "Tools",
-      "description": "Tools rekomendasi komunitas VTCH",
-      "method": "GET",
-      "params": []
-    },
-    "tools": [
-      { "name": "VS Code",    "category": "Editor",      "free": true  },
-      { "name": "Postman",    "category": "API Testing",  "free": true  },
-      { "name": "Nmap",       "category": "Recon",        "free": true  },
-      { "name": "Burp Suite", "category": "Security",     "free": false }
-    ]
-  }
 }
