@@ -1,0 +1,110 @@
+{
+  "status": {
+    "_meta": {
+      "name": "API Status",
+      "description": "Cek status server VTCH API",
+      "method": "GET",
+      "params": []
+    },
+    "version": "1.0.0",
+    "status": "online",
+    "author": "VTCH",
+    "uptime": "99.9%"
+  },
+
+  "info": {
+    "_meta": {
+      "name": "Info VTCH",
+      "description": "Informasi komunitas VTCH",
+      "method": "GET",
+      "params": []
+    },
+    "community": "VTCH - Virtual Tech Community Hub",
+    "founded": "2024",
+    "focus": ["Programming", "Hacking", "Tech", "Networking"],
+    "motto": "Code. Hack. Evolve."
+  },
+
+  "contact": {
+    "_meta": {
+      "name": "Kontak",
+      "description": "Link channel dan grup komunitas VTCH",
+      "method": "GET",
+      "params": []
+    },
+    "whatsapp": {
+      "label": "Channel WhatsApp VTCH",
+      "url": "https://whatsapp.com/channel/0029VbAuMhOJP20yKWguw61k"
+    },
+    "telegram": {
+      "label": "Grup Telegram VTCH",
+      "url": "https://t.me/+NlHuKTzhZbRkMTJl"
+    }
+  },
+
+  "ping": {
+    "_meta": {
+      "name": "Ping",
+      "description": "Cek koneksi ke server",
+      "method": "GET",
+      "params": []
+    },
+    "response": "pong",
+    "server": "VTCH-API-v1"
+  },
+
+  "cari": {
+    "_meta": {
+      "name": "Cari",
+      "description": "Cari dengan query parameter",
+      "method": "GET",
+      "params": [
+        { "key": "q", "label": "Kata kunci pencarian", "required": true }
+      ]
+    },
+    "info": "Kirimkan ?q=<kata_kunci> untuk mencari"
+  },
+
+  "pesan": {
+    "_meta": {
+      "name": "Kirim Pesan",
+      "description": "Kirim pesan ke komunitas VTCH",
+      "method": "POST",
+      "params": [
+        { "key": "nama",  "label": "Nama kamu",  "required": false },
+        { "key": "pesan", "label": "Isi pesan",  "required": true  }
+      ]
+    },
+    "info": "POST dengan field nama (opsional) dan pesan (wajib)"
+  },
+
+  "quote": {
+    "_meta": {
+      "name": "Quote Hacker",
+      "description": "Kutipan inspirasi dari dunia hacking",
+      "method": "GET",
+      "params": []
+    },
+    "quotes": [
+      "The quieter you become, the more you are able to hear. — Kali Linux",
+      "Hack the planet! — Hackers (1995)",
+      "Security is not a product, but a process. — Bruce Schneier",
+      "There is no patch for human stupidity. — Unknown"
+    ]
+  },
+
+  "tools": {
+    "_meta": {
+      "name": "Tools",
+      "description": "Tools rekomendasi komunitas VTCH",
+      "method": "GET",
+      "params": []
+    },
+    "tools": [
+      { "name": "VS Code",    "category": "Editor",      "free": true  },
+      { "name": "Postman",    "category": "API Testing",  "free": true  },
+      { "name": "Nmap",       "category": "Recon",        "free": true  },
+      { "name": "Burp Suite", "category": "Security",     "free": false }
+    ]
+  }
+}
